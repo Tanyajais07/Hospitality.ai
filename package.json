@@ -1,0 +1,44 @@
+{
+  "name": "hospitality",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "node scripts/prepare-standalone.mjs && node .next/standalone/server.js",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "check": "npm run typecheck && npm run lint && npm run build",
+    "test:live-path": "node scripts/test-live-path.mjs",
+    "data:import": "node scripts/import-hospitals.mjs",
+    "data:check": "node scripts/import-hospitals.mjs --check",
+    "test:data": "node --test \"scripts/*.test.mjs\""
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.123.0",
+    "lucide-react": "^0.469.0",
+    "next": "^15.5.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "server-only": "^0.0.1",
+    "unpdf": "^1.8.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0",
+    "@tailwindcss/postcss": "^4.1.13",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^15.5.25",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}
